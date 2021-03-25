@@ -11,6 +11,7 @@ public class vigenere {
       System.out.println("Enter Key word: ");
       String k = myObj.nextLine();
       acetum.setKey(k);
+      System.out.println(acetum.getKey());
       boolean en = true;
       while(en == true) {
          System.out.println("Enter a String or Text File to Encrypt (-1 to quit): ");

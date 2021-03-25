@@ -57,7 +57,7 @@ public class Key {
    
    public void setKey(String k) {
       String temp = k.replaceAll("[^a-zA-Z]+","");
-      key = k.toLowerCase();
+      key = temp.toLowerCase();
    }
    
    public String getKey() {
@@ -67,7 +67,7 @@ public class Key {
    public String modCharEn(String cor, String index) {
       int c = alphabet.indexOf(cor);
       int i = alphabet.indexOf(index);
-      int x = (c+i) % 26;
+      int x = ((c+i) % 26);
       return alphabet.get(x).toUpperCase();
    }
    
