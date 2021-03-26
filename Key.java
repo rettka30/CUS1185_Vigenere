@@ -74,8 +74,14 @@ public class Key {
    public String modCharDe(String cor, String index) {
       int c = alphabet.indexOf(cor.toLowerCase());
       int i = alphabet.indexOf(index.toLowerCase());
-      int x = (c-i) % 26;
-      return alphabet.get(x);
+      int x = (c-i);
+      int f = 0;
+      if(x < 0) {
+         f = (26 + x) % 26;
+      } else {
+         f = x % 26;
+      }
+      return alphabet.get(f);
    }
    
    public String reEn(int s) {

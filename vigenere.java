@@ -23,53 +23,54 @@ public class vigenere {
             System.out.println(alice.showMsg());
          }
       }
-      // Receiver bob = new Receiver(encrypted, acetum);
-//       System.out.println("Switching to Bob...");
-//       System.out.println("Found Message to Read...");
-//       System.out.println("Decrypting Message...");
-//       System.out.println(bob.showMsg());
-//       Attacker eve = new Attacker(encrypted);
-//       System.out.println("Switching to Eve...");
-//       eve.createStats();
-//       System.out.println(eve.showStats());
-//       boolean change = true;
-//       while(change == true) {
-//          System.out.println("Would you like to set a letter? (y = yes and n = no)");
-//          String rep = myObj.nextLine();
-//          if(rep.equals("n")) {
-//             change = false;
-//          } else {
-//             System.out.println("Which letter do you want to change?");
-//             String letter = myObj.nextLine();
-//             System.out.println("To what letter?");
-//             String ke = myObj.nextLine();
-//             eve.setLetter(letter.toUpperCase(), ke);
-//          }
-//       }
-//       boolean answer = true;
-//       while(answer == true) {
-//          System.out.println("What would you like to do now?");
-//          System.out.println("1 = send info to text file | 2 = display message (updated) | 3 = change another letter | 4 = see key | 5 = show stats | 0 = quit");
-//          String an = myObj.nextLine();
-//          if(an.equals("0")) {
-//             answer = false;
-//          } else if(an.equals("1")) {
-//             eve.moveToTxt();
-//          } else if(an.equals("2")) {
-//             System.out.println(eve.showMsg());
-//          } else if(an.equals("3")) {
-//             System.out.println("Which letter do you want to change?");
-//             String letter = myObj.nextLine();
-//             System.out.println("To what letter?");
-//             String ke = myObj.nextLine();
-//             eve.setLetter(letter.toUpperCase(), ke);
-//          } else if(an.equals("4")) {
-//             System.out.println(eve.showKey());
-//          } else if(an.equals("5")) {
-//             System.out.println(eve.showStats());
-//          } else {
-//             answer = false;
-//          }
-//       }
+      Receiver bob = new Receiver(encrypted, acetum);
+      System.out.println("Switching to Bob...");
+      System.out.println("Found Message to Read...");
+      System.out.println("Decrypting Message...");
+      System.out.println(bob.showMsg());
+      Key notae = new Key();
+      Attacker eve = new Attacker(encrypted, notae);
+      System.out.println("Switching to Eve...");
+      eve.createStats();
+      System.out.println(eve.showStats());
+      boolean change = true;
+      while(change == true) {
+         System.out.println("Would you like to set a letter? (y = yes and n = no)");
+         String rep = myObj.nextLine();
+         if(rep.equals("n")) {
+            change = false;
+         } else {
+            System.out.println("Which letter do you want to change?");
+            String letter = myObj.nextLine();
+            System.out.println("To what letter?");
+            String ke = myObj.nextLine();
+            eve.setLetter(letter.toUpperCase(), ke);
+         }
+      }
+      boolean answer = true;
+      while(answer == true) {
+         System.out.println("What would you like to do now?");
+         System.out.println("1 = send info to text file | 2 = display message (updated) | 3 = change another letter | 4 = see key | 5 = show stats | 0 = quit");
+         String an = myObj.nextLine();
+         if(an.equals("0")) {
+            answer = false;
+         } else if(an.equals("1")) {
+            eve.moveToTxt();
+         } else if(an.equals("2")) {
+            System.out.println(eve.showMsg());
+         } else if(an.equals("3")) {
+            System.out.println("Which letter do you want to change?");
+            String letter = myObj.nextLine();
+            System.out.println("To what letter?");
+            String ke = myObj.nextLine();
+            eve.setLetter(letter.toUpperCase(), ke);
+         } else if(an.equals("4")) {
+            System.out.println(eve.showKey());
+         } else if(an.equals("5")) {
+            System.out.println(eve.showStats());
+         } else {
+            answer = false;
+         }
+      }
    }
 }

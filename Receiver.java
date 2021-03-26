@@ -37,13 +37,20 @@ public class Receiver {
    }
    
    public void decrypt() {
+      int j = 0;
       for(int i = 0; i < msg.length(); i++) {
-         String k = String.valueOf(msg.charAt(i));
-         String a = key.findAlphaValue(k);
-         char d = a.charAt(0);
+         String e = String.valueOf(msg.charAt(i));
+         String k = key.getKey();
+         String index = String.valueOf(k.charAt(j));
+         String temp = key.modCharDe(e,index);
+         char d = temp.charAt(0);
          StringBuilder message = new StringBuilder(msg);
          message.setCharAt(i, d);
          msg = message.toString();
+         j++;
+         if(j >= k.length()) {
+            j = 0;
+         }
       }
    }
    
