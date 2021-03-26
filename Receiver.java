@@ -11,7 +11,7 @@ public class Receiver {
    }
    
    public String showKey() {
-      return key.toString();
+      return key.getKey();
    }
    
    public String limit() {

@@ -40,7 +40,7 @@ public class Key {
       key = "";
       cryptex = new ArrayList<String>();
       for (int i = 0; i < alphabet.size(); i++) {
-         cryptex.add("");
+         cryptex.add(" ");
       }
       stats = new ArrayList<Stat>();
    }
